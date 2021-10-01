@@ -1,0 +1,8 @@
+prefix=/home/p/hexapod_ws/devel
+
+Name: hexapod_pkg
+Description: Description of hexapod_pkg
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp gazebo_ros

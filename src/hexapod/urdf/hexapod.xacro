@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+
+<robot name="hexapod" xmlns:xacro="http://wiki.ros.org/xacro">
+
+    <xacro:include filename="$(find hexapod)/urdf/hexapod.gazebo" />
+    <xacro:include filename="$(find hexapod)/urdf/hexapod.urdf" />
+
+    <xacro:macro name="transmission_block" params="joint_name">
+    <transmission name="trans1">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${joint_name}">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor1">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+  </xacro:macro>
+
+    <xacro:transmission_block joint_name="body_leg_0"/>
+    <xacro:transmission_block joint_name="body_leg_1"/>
+    <xacro:transmission_block joint_name="body_leg_2"/>
+    <xacro:transmission_block joint_name="body_leg_3"/>
+    <xacro:transmission_block joint_name="body_leg_4"/>
+    <xacro:transmission_block joint_name="body_leg_5"/>
+
+    <xacro:transmission_block joint_name="leg_0_1_2"/>
+    <xacro:transmission_block joint_name="leg_1_1_2"/>
+    <xacro:transmission_block joint_name="leg_2_1_2"/>
+    <xacro:transmission_block joint_name="leg_3_1_2"/>
+    <xacro:transmission_block joint_name="leg_4_1_2"/>
+    <xacro:transmission_block joint_name="leg_5_1_2"/>
+
+    <xacro:transmission_block joint_name="leg_0_2_3"/>
+    <xacro:transmission_block joint_name="leg_1_2_3"/>
+    <xacro:transmission_block joint_name="leg_2_2_3"/>
+    <xacro:transmission_block joint_name="leg_3_2_3"/>
+    <xacro:transmission_block joint_name="leg_4_2_3"/>
+    <xacro:transmission_block joint_name="leg_5_2_3"/>
+
+
+</robot>

@@ -1,0 +1,8 @@
+prefix=/home/p/hexapod_ws/install
+
+Name: crab_msgs
+Description: Description of crab_msgs
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime

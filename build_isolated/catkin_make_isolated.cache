@@ -1,0 +1,2 @@
+hexapod_pkg
+-DCMAKE_BUILD_TYPE=RelWithDebInfo -G Unix Makefiles -DCATKIN_DEVEL_PREFIX=/home/p/hexapod_ws/devel_isolated -DCMAKE_INSTALL_PREFIX=/home/p/hexapod_ws/install_isolated
