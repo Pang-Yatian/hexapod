@@ -7,6 +7,7 @@
 \usepackage{graphicx,graphbox}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{subfigure}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -23,11 +24,11 @@ e0576086@u.nus.edu}
 
 \begin{abstract}
 Bio-inspired robot is designed to engage in biological characteristics works, which is based on biology in nature and imitates it physiological characteristics and behavior
-patterns. In this project, we explore the leg composition of insects, espeically hexapod animals, and design an felxiable hexpod robot. After analysing the gait of insects, we  design and implement a locomotion controller for the hexapod robot and simulate in Gazebo simulation environment.
+patterns. In this project, we explore the leg composition of insects, espeically hexapod animals, and design an felxiable hexpod robot. After analysing the gait of insects, we  design and implement a locomotion controller for the hexapod robot by solving body inverse kinematics and leg inverse kinematics. After inplement in Robot Operating System, we simulate body posture control and robot locomotion control. The results show that our body posture and locomotion control method is successful. Besides, our proposed contorl framework is efficent that the hexapod robot can change body postures at arbitrary time during locomotion.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Bio-inspired, hexapod, gait control
+Bio-inspired, hexapod, locomotion control, body posture control
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -90,9 +91,21 @@ During tripod gait, three legs move at a time while the other three remain stati
 
 \section{Design of the Hexapod robot}\label{s3}
 
-\subsection{Hexapod Model}
+\begin{figure}
+    \centerline{\includegraphics[width=0.35\textwidth]{single_leg.jpg}}
+    \caption{Leg model}
+    \label{fig2}
+\end{figure}
 
-\subsection{Hexapod Kinematics Model}
+For a single leg, we simplify the leg components of a biological insects' leg, only keeping coxa, femur and tibia as Figure \ref{fig2} shows. Note that the first joint that connects body and coxa is placed vertically. The other two joints are placed horizontally. All the six legs are having the same structure. For the length of each links, we design a length of \(0.08m, 0.10m, 0.16m\) for coxa, femur and tibia respectively. Their weights are \(0.7kg, 0.4kg, 0.6kg\) respectively.
+
+For the body, we use a box with a size of \(0.28m * 0.14m *0.04m\), of which the weight is \(10kg\). Six legs are fixed by joints at the position, of which the distance to edges is \(0.01m\), through symmetrical distribution. The assembled hexapod model is shown in Figure \ref{fig10}. 
+
+\begin{figure}
+    \centerline{\includegraphics[width=0.4\textwidth]{hexapod.png}}
+    \caption{Hexapod model}
+    \label{fig10}
+\end{figure}
 
 \section{locomotion controller design}\label{s4}
 
@@ -155,12 +168,6 @@ R &= rotx(R)\cdot roty(P) \cdot rotz(Y)\\
 After obtianing \(\overrightarrow{OB_n}\) based on the design of six foot location, substitute equation (\ref{3})(\ref{4}) into equation (\ref{1}), the single leg configuration vector can be calculated.
 
 \subsection{Single Leg Inverse Kinematics Model}
-
-\begin{figure}
-    \centerline{\includegraphics[width=0.4\textwidth]{single_leg.jpg}}
-    \caption{Leg inverse kinematics}
-    \label{fig2}
-\end{figure}
 
 \begin{figure}
     \centering
@@ -231,19 +238,62 @@ Till now, a whole step foot trajectory has been generated. The generation proces
 
 \subsection{Gait Design}
 
-For gait design, we completely follow the result of gait analysisi from biology, which is described in Section \ref{ss}. The straightforward illusration can be found in Figure \ref{fig6}. To avoid repetation, we will not described again here.
+For gait design, we completely follow the result of gait analysis from biology, which is described in Section \ref{ss}. The straightforward illusration can be found in Figure \ref{fig6}. To avoid repetation, we will not described again here.
+
+Details of the design is described as follow, we set step size to be \(0.08m\) and step height to be \(0.04m\). For smooth factor we choose \(s=4\) to get smooth trajectory without consuming too much computational resource.
 
 \section{Simulation Experiments}\label{s5}
+The simulation envirnment are built based on Robot Operating System (ROS) and a physical engine Gazebo.
+
+\begin{figure}
+    \centerline{\includegraphics[width=0.5\textwidth]{rosgraph.png}}
+    \caption{ROS framework}
+    \label{fig11}
+\end{figure}
 
 \subsection{Overall framework}
+ROS mostly takes the advantages of node pubulish/subscribe, serivice and parameter server mechanism, which is easy to handle complex robot system. The overall framework in our project is shown in Figure \ref{fig11}. Node \(</move\_teleop>\) and node \(</body\_teleop>\) are used to choose preset gait and body posture by changing the parameters in parameter server. Node \(</gazebo\_gui>\) and node \(</hexapod/controller\_spawner>\) and are uesd to initialize the simulation system. After calculating the desired 18 joints angles, we use node \(</pos\_pub\_node>\) to pubulish each angel to corresponding topics. Then the controllers for the joints subscribe data from corresponding topics and actuate joints in simulation environment through node \(</gazebo>\).
+\subsection{Setting Details}
 
-\subsection{Gazebo Setting Details}
+For each joint, we are using \(ros\_control\) plugins for actuation. The type of controller using for each joint is \(effort\_controllers/JointPositionController\) with hardware interface \(/EffortJointInterface\). After tuned, PID gains are set to \(k_p = 50, k_i = 0.01, k_d=1\) in order to achieve good performance. The publish rate of controllers is set to \(300\).  
+
+For the Gazebo contact surface friction coefficients, we use default parameters, which is \(\mu_1 = \mu _2 = 1.0\).
 
 \subsection{Body posture control}
 
+The posture control experiment results are shown in Figure \ref{fig111}, \((a)\) is the default posture, \((b-h)\) are different preset postures.
+
+\begin{figure}
+    \centering
+    \subfigure[Default posture]{\includegraphics[scale = 0.4]{b1.png}} 
+    \subfigure[\(p_y -0.03\)]{\includegraphics[scale = 0.4]{b11.png}} \\
+    \subfigure[\(p_y +0.03\)]{\includegraphics[scale = 0.4]{b2.png}} 
+    \subfigure[\(p_x +0.05\)]{\includegraphics[scale = 0.4]{b3.png}} \\
+    \subfigure[\(p_x - 0.05\)]{\includegraphics[scale = 0.4]{b4.png}} 
+    \subfigure[\(Pitch - 10^o\)]{\includegraphics[scale = 0.4]{b5.png}} \\
+    \subfigure[\(Pitch + 10^o\)]{\includegraphics[scale = 0.4]{b6.png}}  
+    \subfigure[\(p_z-0.02\)]{\includegraphics[scale = 0.4]{b9.png}} \\
+    \caption{Body posture control}
+      \label{fig111}
+\end{figure}
+
 \subsection{Locomotion}
+The locomotion experiments results are presented in Figure \ref{fig1111}, in which \((a)\) is the start point, \((b)\) is captured during forward gait while \((c)\) is captured during backward gait. Note the simulation time at the bottom of above mentioned figure can prove the locomotion is successful. Meanwhile, due to our design framework, the hexapod robot can change to arbitrary preset posture at any time during the locomotion. \ref{fig1111} \((d)\) shows an example that the hexapod robot is moving forward with a posture of \(Pitch - 10^o\).
+\begin{figure}
+    \centering
+    \subfigure[Start point]{\includegraphics[scale= 0.2]{a0.png}}
+    \centering
+    \subfigure[Forward gait]{\includegraphics[scale= 0.2]{a1.png}}\\
+    \subfigure[Backward gait]{\includegraphics[scale= 0.2]{a2.png}}
+    \centering
+    \subfigure[Forward gait \((Pitch - 10^o)\)]{\includegraphics[scale= 0.25]{a3.png}}
+    \caption{Hexapod locmtion}
+    \label{fig1111}
+\end{figure}
 
 \section{Conclusion}
+
+In this project, we get inspiration from biology animals and build a hexapod robot model. After analysing insects gait, we implement it to our hexapod robot by buiding and solving body inverse kinematics and leg inverse kinematics. Then we build a efficent control framework based on ROS and Gazebo to do experiments in simulation environment. Our proposed method is successful for controlling hexapod robot posture and locomotion. Our proposed contorl framework is efficent that the hexapod robot can change body postures at arbitrary time during locomotion.
 
 \begin{thebibliography}{00}   
 
@@ -268,11 +318,6 @@ For gait design, we completely follow the result of gait analysisi from biology,
     Ferrell, C. (1995). A Comparison of Three Insect Inspired Locomotion Controllers, Robotics and autonomous systems 16.2, 135-159.
     \bibitem{b5}
     Hörger, Marcus, Kottege, N., Bandyopadhyay, T., Elfes, A., and Moghadam, P. Real-Time Stabilisation for Hexapod Robots, Autonomous Systems, CSIRO Computational Informatics, Queensland Center for Advanced Technology, Brisbane, QLD.
- 
-    
-
-
-
 \end{thebibliography}
 
 \end{document}
