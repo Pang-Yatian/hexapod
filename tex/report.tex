@@ -193,7 +193,7 @@ From the side view, we will split \(\alpha\) into \(\alpha_1\) and \(\alpha_2\).
     \alpha_1 = cos^{-1}(\frac{Z_{offset}}{L})
 \end{equation}
 
-In our case, here \(Z^{2}_{offset}=z\). With the helpl of Cosine Rules,
+In our case, here \(Z^{2}_{offset}=z\). With the help of Cosine Rules,
 
 \begin{equation}
     \alpha_2 = cos^{-1}(\frac{L_{tibia}^2-L_{femur}^2 - L^2}{-2\cdot L \cdot L_{femur}})
@@ -252,7 +252,7 @@ The simulation envirnment are built based on Robot Operating System (ROS) and a 
 \end{figure}
 
 \subsection{Overall framework}
-ROS mostly takes the advantages of node pubulish/subscribe, serivice and parameter server mechanism, which is easy to handle complex robot system. The overall framework in our project is shown in Figure \ref{fig11}. Node \(</move\_teleop>\) and node \(</body\_teleop>\) are used to choose preset gait and body posture by changing the parameters in parameter server. Node \(</gazebo\_gui>\) and node \(</hexapod/controller\_spawner>\) and are uesd to initialize the simulation system. After calculating the desired 18 joints angles, we use node \(</pos\_pub\_node>\) to pubulish each angel to corresponding topics. Then the controllers for the joints subscribe data from corresponding topics and actuate joints in simulation environment through node \(</gazebo>\).
+ROS mostly takes the advantages of node publish/subscribe, serivice and parameter server mechanism, which is easy to handle complex robot system. The overall framework in our project is shown in Figure \ref{fig11}. Node \(</move\_teleop>\) and node \(</body\_teleop>\) are used to choose preset gait and body posture by changing the parameters in parameter server. Node \(</gazebo\_gui>\) and node \(</hexapod/controller\_spawner>\) and are uesd to initialize the simulation system. After calculating the desired 18 joints angles, we use node \(</pos\_pub\_node>\) to publish each angel to corresponding topics. Then the controllers for the joints subscribe data from corresponding topics and actuate joints in simulation environment through node \(</gazebo>\).
 \subsection{Setting Details}
 
 For each joint, we are using \(ros\_control\) plugins for actuation. The type of controller using for each joint is \(effort\_controllers/JointPositionController\) with hardware interface \(/EffortJointInterface\). After tuned, PID gains are set to \(k_p = 50, k_i = 0.01, k_d=1\) in order to achieve good performance. The publish rate of controllers is set to \(300\).  
