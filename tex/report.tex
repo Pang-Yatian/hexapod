@@ -48,7 +48,7 @@ this report is arranged as follows, in section \ref{s2}, we conduct a biology an
 
 \section{Biology Analysis}\label{s2}
 
-\subsection{Leg composition} 
+\subsection{Leg Composition} 
 \begin{figure}
     \centerline{\includegraphics[width=0.2\textwidth]{leg.png}}
     \caption{Leg composition}
@@ -72,7 +72,7 @@ Ambulatory legs are used for walking, for example in beetles (Coleoptera), and b
 
 Cursorial legs are modified for running, for example in cockroaches (Blattodea), with long, thin segments. (Figure \ref{fig9} right)\cite{b3}
 
-\subsection{Bio-insipred gait analysis}\label{ss}
+\subsection{Bio-insipred Gait Analysis}\label{ss}
 \begin{figure}
     \centerline{\includegraphics[width=0.4\textwidth]{tri.png}}
     \caption{Tripod gait}
@@ -107,7 +107,7 @@ For the body, we use a box with a size of \(0.28m * 0.14m *0.04m\), of which the
     \label{fig10}
 \end{figure}
 
-\section{locomotion controller design}\label{s4}
+\section{Locomotion Controller Design}\label{s4}
 
 The overall structure of locomotion controller is shown in Figure \ref{fig4}. There are two types of commands, one is to control the posture of the hexapod body, the other one is to control the locomotion. With preset gaits, we can generate foot trajectory based on different methods and parameters. Combined with the desired body posture, whole body inverse kinematics model can be solve to calculate legs vectors, which will be passed to slove leg inverse kinematics to calculate 18 joints angles.
 
@@ -251,7 +251,7 @@ The simulation envirnment are built based on Robot Operating System (ROS) and a 
     \label{fig11}
 \end{figure}
 
-\subsection{Overall framework}
+\subsection{Overall Framework}
 ROS mostly takes the advantages of node publish/subscribe, serivice and parameter server mechanism, which is easy to handle complex robot system. The overall framework in our project is shown in Figure \ref{fig11}. Node \(</move\_teleop>\) and node \(</body\_teleop>\) are used to choose preset gait and body posture by changing the parameters in parameter server. Node \(</gazebo\_gui>\) and node \(</hexapod/controller\_spawner>\) and are uesd to initialize the simulation system. After calculating the desired 18 joints angles, we use node \(</pos\_pub\_node>\) to publish each angel to corresponding topics. Then the controllers for the joints subscribe data from corresponding topics and actuate joints in simulation environment through node \(</gazebo>\).
 \subsection{Setting Details}
 
@@ -259,7 +259,7 @@ For each joint, we are using \(ros\_control\) plugins for actuation. The type of
 
 For the Gazebo contact surface friction coefficients, we use default parameters, which is \(\mu_1 = \mu _2 = 1.0\).
 
-\subsection{Body posture control}
+\subsection{Body Posture Control}
 
 The posture control experiment results are shown in Figure \ref{fig111}, \((a)\) is the default posture, \((b-h)\) are different preset postures.
 
