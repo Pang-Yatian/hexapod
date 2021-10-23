@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.18)  13 OCT 2021 23:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.8.18)  23 OCT 2021 15:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -286,20 +286,20 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 ) (/home/p/hexapod_ws/tex/report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
 
 -- Lines per column: 56 (exact).
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -324,7 +324,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 <leg.png, id=1, 425.59pt x 440.64626pt>
 File: leg.png Graphic file (type png)
 <use leg.png>
-Package pdftex.def Info: leg.png  used on input line 53.
+Package pdftex.def Info: leg.png  used on input line 54.
 (pdftex.def)             Requested size: 103.19843pt x 106.8465pt.
  [1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -333,140 +333,140 @@ Package pdftex.def Info: leg.png  used on input line 53.
 <leg1.png, id=13, 295.1025pt x 152.82094pt>
 File: leg1.png Graphic file (type png)
 <use leg1.png>
-Package pdftex.def Info: leg1.png  used on input line 64.
+Package pdftex.def Info: leg1.png  used on input line 65.
 (pdftex.def)             Requested size: 106.2368pt x 55.01549pt.
 <leg2.jpg, id=14, 308.15125pt x 212.795pt>
 File: leg2.jpg Graphic file (type jpg)
 <use leg2.jpg>
-Package pdftex.def Info: leg2.jpg  used on input line 65.
+Package pdftex.def Info: leg2.jpg  used on input line 66.
 (pdftex.def)             Requested size: 107.85454pt x 74.47935pt.
 <tri.png, id=15, 594.72188pt x 152.82094pt>
 File: tri.png Graphic file (type png)
 <use tri.png>
-Package pdftex.def Info: tri.png  used on input line 77.
+Package pdftex.def Info: tri.png  used on input line 78.
 (pdftex.def)             Requested size: 206.39685pt x 53.03574pt.
 <gait.png, id=16, 616.3025pt x 321.2pt>
 File: gait.png Graphic file (type png)
 <use gait.png>
-Package pdftex.def Info: gait.png  used on input line 83.
+Package pdftex.def Info: gait.png  used on input line 84.
 (pdftex.def)             Requested size: 206.39685pt x 107.56468pt.
 <single_leg.jpg, id=17, 742.775pt x 591.20876pt>
 File: single_leg.jpg Graphic file (type jpg)
 <use single_leg.jpg>
-Package pdftex.def Info: single_leg.jpg  used on input line 95.
+Package pdftex.def Info: single_leg.jpg  used on input line 96.
 (pdftex.def)             Requested size: 180.60315pt x 143.75134pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 100.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 101.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 100.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 101.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <hexapod.png, id=18, 782.17218pt x 599.99156pt>
 File: hexapod.png Graphic file (type png)
 <use hexapod.png>
-Package pdftex.def Info: hexapod.png  used on input line 105.
+Package pdftex.def Info: hexapod.png  used on input line 106.
 (pdftex.def)             Requested size: 206.39685pt x 158.31952pt.
 <framework.png, id=19, 1003.75pt x 200.75pt>
 File: framework.png Graphic file (type png)
 <use framework.png>
-Package pdftex.def Info: framework.png  used on input line 115.
+Package pdftex.def Info: framework.png  used on input line 116.
 (pdftex.def)             Requested size: 301.12732pt x 60.22545pt.
 <body_IK.png, id=20, 127.48753pt x 121.80338pt>
 File: body_IK.png Graphic file (type png)
 <use body_IK.png>
-Package pdftex.def Info: body_IK.png  used on input line 122.
+Package pdftex.def Info: body_IK.png  used on input line 123.
 (pdftex.def)             Requested size: 127.48721pt x 121.80307pt.
  [2 </home/p/hexapod_ws/tex/leg1.png> </home/p/hexapod_ws/tex/leg2.jpg> </home/p/hexapod_ws/tex/tri.png> </home/p/hexapod_ws/tex/gait.png> </home/p/hexapod_ws/tex/single_leg.jpg>]
 <1-IK-top.jpg, id=29, 338.01282pt x 283.0575pt>
 File: 1-IK-top.jpg Graphic file (type jpg)
 <use 1-IK-top.jpg>
-Package pdftex.def Info: 1-IK-top.jpg  used on input line 174.
+Package pdftex.def Info: 1-IK-top.jpg  used on input line 175.
 (pdftex.def)             Requested size: 121.68451pt x 101.9006pt.
 <2-IK-side1.jpg, id=30, 338.76563pt x 324.46219pt>
 File: 2-IK-side1.jpg Graphic file (type jpg)
 <use 2-IK-side1.jpg>
-Package pdftex.def Info: 2-IK-side1.jpg  used on input line 175.
+Package pdftex.def Info: 2-IK-side1.jpg  used on input line 176.
 (pdftex.def)             Requested size: 118.56973pt x 113.56346pt.
  [3 </home/p/hexapod_ws/tex/hexapod.png> </home/p/hexapod_ws/tex/framework.png> </home/p/hexapod_ws/tex/body_IK.png> </home/p/hexapod_ws/tex/1-IK-top.jpg> </home/p/hexapod_ws/tex/2-IK-side1.jpg>]
 <traj.png, id=41, 377.41pt x 226.8475pt>
 File: traj.png Graphic file (type png)
 <use traj.png>
-Package pdftex.def Info: traj.png  used on input line 221.
+Package pdftex.def Info: traj.png  used on input line 222.
 (pdftex.def)             Requested size: 206.39685pt x 124.05692pt.
 <rosgraph.png, id=42, 1793.19937pt x 1436.36626pt>
 File: rosgraph.png Graphic file (type png)
 <use rosgraph.png>
-Package pdftex.def Info: rosgraph.png  used on input line 249.
+Package pdftex.def Info: rosgraph.png  used on input line 250.
 (pdftex.def)             Requested size: 258.0pt x 206.65686pt.
 <b1.png, id=43, 299.1175pt x 178.6675pt>
 File: b1.png Graphic file (type png)
 <use b1.png>
-Package pdftex.def Info: b1.png  used on input line 268.
+Package pdftex.def Info: b1.png  used on input line 269.
 (pdftex.def)             Requested size: 119.64487pt x 71.46573pt.
 <b11.png, id=44, 299.1175pt x 178.6675pt>
 File: b11.png Graphic file (type png)
 <use b11.png>
-Package pdftex.def Info: b11.png  used on input line 269.
+Package pdftex.def Info: b11.png  used on input line 270.
 (pdftex.def)             Requested size: 119.64487pt x 71.46573pt.
 <b2.png, id=45, 299.1175pt x 178.6675pt>
 File: b2.png Graphic file (type png)
 <use b2.png>
-Package pdftex.def Info: b2.png  used on input line 270.
+Package pdftex.def Info: b2.png  used on input line 271.
 (pdftex.def)             Requested size: 119.64487pt x 71.46573pt.
 <b3.png, id=46, 299.1175pt x 178.6675pt>
 File: b3.png Graphic file (type png)
 <use b3.png>
-Package pdftex.def Info: b3.png  used on input line 271.
+Package pdftex.def Info: b3.png  used on input line 272.
 (pdftex.def)             Requested size: 119.64487pt x 71.46573pt.
 <b4.png, id=47, 299.1175pt x 178.6675pt>
 File: b4.png Graphic file (type png)
 <use b4.png>
-Package pdftex.def Info: b4.png  used on input line 272.
+Package pdftex.def Info: b4.png  used on input line 273.
 (pdftex.def)             Requested size: 119.64487pt x 71.46573pt.
 <b5.png, id=48, 299.1175pt x 178.6675pt>
 File: b5.png Graphic file (type png)
 <use b5.png>
-Package pdftex.def Info: b5.png  used on input line 273.
+Package pdftex.def Info: b5.png  used on input line 274.
 (pdftex.def)             Requested size: 119.64487pt x 71.46573pt.
 <b6.png, id=49, 299.1175pt x 178.6675pt>
 File: b6.png Graphic file (type png)
 <use b6.png>
-Package pdftex.def Info: b6.png  used on input line 274.
+Package pdftex.def Info: b6.png  used on input line 275.
 (pdftex.def)             Requested size: 119.64487pt x 71.46573pt.
 <b9.png, id=50, 299.1175pt x 178.6675pt>
 File: b9.png Graphic file (type png)
 <use b9.png>
-Package pdftex.def Info: b9.png  used on input line 275.
+Package pdftex.def Info: b9.png  used on input line 276.
 (pdftex.def)             Requested size: 119.64487pt x 71.46573pt.
 <a0.png, id=51, 604.2575pt x 363.3575pt>
 File: a0.png Graphic file (type png)
 <use a0.png>
-Package pdftex.def Info: a0.png  used on input line 284.
+Package pdftex.def Info: a0.png  used on input line 285.
 (pdftex.def)             Requested size: 120.84935pt x 72.6702pt.
 <a2.png, id=52, 604.2575pt x 363.3575pt>
 File: a2.png Graphic file (type png)
 <use a2.png>
-Package pdftex.def Info: a2.png  used on input line 286.
+Package pdftex.def Info: a2.png  used on input line 287.
 (pdftex.def)             Requested size: 120.84935pt x 72.6702pt.
 <a1.png, id=53, 604.2575pt x 363.3575pt>
 File: a1.png Graphic file (type png)
 <use a1.png>
-Package pdftex.def Info: a1.png  used on input line 287.
+Package pdftex.def Info: a1.png  used on input line 288.
 (pdftex.def)             Requested size: 120.84935pt x 72.6702pt.
 <a3.png, id=54, 432.61626pt x 288.07625pt>
 File: a3.png Graphic file (type png)
 <use a3.png>
-Package pdftex.def Info: a3.png  used on input line 289.
+Package pdftex.def Info: a3.png  used on input line 290.
 (pdftex.def)             Requested size: 108.1538pt x 72.01888pt.
  [4 </home/p/hexapod_ws/tex/traj.png> </home/p/hexapod_ws/tex/rosgraph.png>]
-Underfull \hbox (badness 1354) in paragraph at lines 320--321
+Underfull \hbox (badness 1354) in paragraph at lines 321--322
 []\OT1/ptm/m/n/8 H[]orger, Mar-cus, Kot-tege, N., Bandy-opad-hyay, T., Elfes, A., and
  []
 
 
-Underfull \hbox (badness 1546) in paragraph at lines 320--321
+Underfull \hbox (badness 1546) in paragraph at lines 321--322
 \OT1/ptm/m/n/8 Moghadam, P. Real-Time Sta-bil-i-sa-tion for Hexa-pod Robots, Au-
  []
 
@@ -486,15 +486,15 @@ Before submitting the final camera ready copy, remember to:
 
 [5 </home/p/hexapod_ws/tex/b1.png> </home/p/hexapod_ws/tex/b11.png> </home/p/hexapod_ws/tex/b2.png> </home/p/hexapod_ws/tex/b3.png> </home/p/hexapod_ws/tex/b4.png> </home/p/hexapod_ws/tex/b5.png> </home/p/hexapod_ws/tex/b6.png> </home/p/hexapod_ws/tex/b9.png> </home/p/hexapod_ws/tex/a0.png> </home/p/hexapod_ws/tex/a2.png> </home/p/hexapod_ws/tex/a1.png> </home/p/hexapod_ws/tex/a3.png>] (/home/p/hexapod_ws/tex/report.aux) ) 
 Here is how much of TeX's memory you used:
- 4534 strings out of 478994
- 65457 string characters out of 5858190
- 376771 words of memory out of 5000000
- 21950 multiletter control sequences out of 15000+600000
+ 4535 strings out of 478994
+ 65469 string characters out of 5858190
+ 376511 words of memory out of 5000000
+ 21951 multiletter control sequences out of 15000+600000
  437596 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,14n,74p,850b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/p/hexapod_ws/tex/report.pdf (5 pages, 1112690 bytes).
+Output written on /home/p/hexapod_ws/tex/report.pdf (5 pages, 1115487 bytes).
 PDF statistics:
  127 PDF objects out of 1000 (max. 8388607)
  59 compressed objects within 1 object stream
