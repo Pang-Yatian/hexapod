@@ -24,5 +24,5 @@ install ros packages
  ```
  roslaunch hexapod_pkg spawn.launch #create hexapod in gazebo
  rosrun hexapod_pkg body_leyboard.py #body posture control (command 1-9)
- rosrun hexapod_pkg move_leyboard.py #locomotion (command w s i)
+ rosrun hexapod_pkg move_keyboard.py #locomotion (command w s i)
  ```
