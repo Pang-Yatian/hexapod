@@ -25,7 +25,9 @@ e0576086@u.nus.edu}
 
 \begin{abstract}
 Bio-inspired robot is designed to engage in biological characteristics works, which is based on biology in nature and imitates it physiological characteristics and behavior
-patterns. In this project, we explore the leg composition of insects, espeically hexapod animals, and design an felxiable hexpod robot. After analysing the gait of insects, we  design and implement a locomotion controller for the hexapod robot by solving body inverse kinematics and leg inverse kinematics. After inplement in Robot Operating System, we simulate body posture control and robot locomotion control. The results show that our body posture and locomotion control method is successful. Besides, our proposed contorl framework is efficent that the hexapod robot can change body postures at arbitrary time during locomotion. \textit{\textcolor{magenta}{Code available at: https://github.com/Pang-Yatian/hexapod}}
+patterns. In this project, we explore the leg composition of insects, espeically hexapod animals, and design an flexiable hexpod robot. After analysing the gait of insects, we  design and implement a locomotion controller for the hexapod robot by solving body inverse kinematics and leg inverse kinematics. We adopt Robot Operating System to simulate body posture control and robot locomotion control. The results show that our body posture and locomotion control method is successful. Besides, our proposed contorl framework is efficent that the hexapod robot can change body postures at arbitrary time during locomotion. 
+
+\textit{\textcolor{magenta}{Code available at: https://github.com/Pang-Yatian/hexapod}}
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -33,9 +35,7 @@ Bio-inspired, hexapod, locomotion control, body posture control
 \end{IEEEkeywords}
 
 \section{Introduction}
-Legged robots have been studied in recent decades in order to take advantages that demostrated by natural abilities of some animals and insects.
-
-Nevertheless, locomotion of the legged robots is quite challenging espeically when it comes to irregular terrains \cite{a2}\cite{a3}. The animals are naturally adapted to different types of surfaces. Aming to develop a similar mechanism, scientific communities are inspired and try to imitate to some extent in mechanical design, gait control etc.
+Legged robots have been studied in recent decades in order to take advantages that demostrated by natural abilities of some animals and insects.Nevertheless, locomotion of the legged robots is quite challenging espeically when it comes to irregular terrains \cite{a2}\cite{a3}. The animals are naturally adapted to different types of surfaces. Aming to develop a similar mechanism, scientific communities are inspired and try to imitate to some extent in mechanical design, gait control etc.
 
 One of the main challenges in the development of robots is the locomotion system design, which involves the interaction of structures composed of prismatic or rotational joints which emulates the motion functions existing in nature, allowing adapting to uneven terrain \cite{a15}. It also needs to deal with problems like the mechanical complexity existing in legs, the mechanism stability, power consumption, synchronization of the links in each of the robots joints and the control of number of degrees of freedom that is requiring.\cite{aa} In case of a hexapod robot with three degrees of freedom per leg it is required to synchronize for eighteen angles in total.
 
@@ -43,9 +43,9 @@ The legs location regarding the displacement surface is important in the robot�
 
 If we have the trajectory that allows a smooth movement, we will not see the robot stability affected by a hard movement and we can determine the progress of the movement in a given time. Also, if the robot moves within the established limits, the collision risk is avoided and the system will be safe.
 
-To solve the problems mentioned above, a electrical prototype is developed in this project, with the goal to generate inspiration that learned from animals. Besides, robot locomotion controller is designed based on gait analysis of animals. We test our hexapod robot in the simulation environment and do corresponding experiments to prove the efficency of our model and controller. 
+To solve the problems mentioned above, a simulated prototype is developed in this project, with the goal to generate inspiration that learned from animals. Besides, robot locomotion controller is designed based on gait analysis of animals. We test our hexapod robot in the simulation environment and do corresponding experiments to prove the efficency of our model and controller. 
 
-this report is arranged as follows, in section \ref{s2}, we conduct a biology analysis, in which leg composition and gait analysis will be presented. In section \ref{s3}, we will introduce the hexapod robot model design and calculate the corresponding kinematics model. In section \ref{s4}, design of the locomotion controller will be detailed. After presenting the simulation experiments in section \ref{s5}, we will conclude the whole project.
+This report is arranged as follows, in section \ref{s2}, we conduct a biology analysis, in which leg composition and gait analysis will be presented. In section \ref{s3}, we will introduce the hexapod robot model design and calculate the corresponding kinematics model. In section \ref{s4}, design of the locomotion controller will be detailed. After presenting the simulation experiments in section \ref{s5}, we will conclude the whole project.
 
 \section{Biology Analysis}\label{s2}
 
@@ -58,7 +58,7 @@ this report is arranged as follows, in section \ref{s2}, we conduct a biology an
 
 The typical insect leg consists of several segments that are highly adapted to allow the leg to be suitable for its specific requirements. As Figure \ref{fig8} shows, the main segments of the leg are the coxa, trochanter, femur, tibia and tarsus, some of which are not unlike the human leg.\cite{b1} The leg segments have internal muscles, surrounded by tubular structures with articulations for joints. Insect legs are covered in sensilla, sensory organs protruding from the cuticle, that help the insect touch and taste the surface its walking on, as well as proprioceptors for ‘awareness of self’.\cite{b2}
 
-Insect legs are hugely diverse, with different groups of insects bearing very different types of legs that are adapted for their lifestyles.
+Insect legs are hugely diverse, with different groups of insects bearing very different types of legs that are adapted for their lifestyles.Ambulatory legs are used for walking, for example in beetles (Coleoptera), and bugs (Hemiptera), and are known as the basic, general insect legs (Figure \ref{fig9} left)\cite{b3}. Cursorial legs are modified for running, for example in cockroaches (Blattodea), with long, thin segments (Figure \ref{fig9} right)\cite{b3}.
 
 \begin{figure}
     \centering
@@ -69,9 +69,7 @@ Insect legs are hugely diverse, with different groups of insects bearing very di
 \end{figure}
 
 
-Ambulatory legs are used for walking, for example in beetles (Coleoptera), and bugs (Hemiptera), and are known as the basic, general insect legs. (Figure \ref{fig9} left)\cite{b3}
 
-Cursorial legs are modified for running, for example in cockroaches (Blattodea), with long, thin segments. (Figure \ref{fig9} right)\cite{b3}
 
 \subsection{Bio-insipred Gait Analysis}\label{ss}
 \begin{figure}
@@ -216,7 +214,7 @@ As the design of six legs are similar, the solution introduced above can be appl
 
 \subsection{Single Foot Trajectory Design}
 
-To generate a single foot trajectory, we introduce a parameter \(s\) to determine the number of intermedia points between two foot steps. We also want to control the step size \(L\) and step height \(H\), hence we introduce a modified cycloid function on \(X-Z\) projection plane for forward half step (green arrows), which is return stroke as Section \ref{ss}. On \(Y\)axis, all the points are set to average distribution. Given start foot point coordinate of a step \((x_s, y_s, z_s)\) and end foot point coordinate \((x_e, y_e, z_e)\), the trajectory containing \(n\) intermedia points can be dirived by 
+To generate a single foot trajectory, we introduce a parameter \(s\) to determine the number of intermedia points between two foot steps. We also want to control the step size \(L\) and step height \(H\), hence we introduce a modified cycloid function on \(X-Z\) projection plane for forward half step (green arrows), which is return stroke as Section \ref{ss} introduced. On \(Y\)axis, all the points are set to average distribution considering the less motion on this axis. Given start foot point coordinate of a step \((x_s, y_s, z_s)\) and end foot point coordinate \((x_e, y_e, z_e)\), the trajectory containing \(n\) intermedia points can be dirived by 
 
 \begin{figure}
     \centerline{\includegraphics[width=0.4\textwidth]{traj.png}}
@@ -227,13 +225,13 @@ To generate a single foot trajectory, we introduce a parameter \(s\) to determin
 \begin{equation}
     \begin{cases}
     t_n &= n \cdot \frac{2\pi}{s}\\
-    x_n &= x_s+\frac{L}{2\pi} \cdot(t- sin(t))\\
-    z_n &= z_s+\frac{H}{2}\cdot(1- cos(t))\\
+    x_n &= x_s+\frac{L}{2\pi} \cdot(t_n- sin(t_n))\\
+    z_n &= z_s+\frac{H}{2}\cdot(1- cos(t_n))\\
     y_n &= y_s + (y_e - y_s)\cdot \frac{n}{s}    
     \end{cases}
 \end{equation}
 
-For the backward half step (blue arrows), which is power stroke as described in Section \ref{ss}, as the leg need to make use of the friction between foot and ground to act force in joints, we need foot always contact with the ground.
+For the backward half step (blue arrows), which is power stroke as described in Section \ref{ss}, as the leg need to make use of the friction between foot and ground to act force in joints, we adopt average distribution for intermedia points on \(X-Y\) plane to keep foot always contact with ground. 
 
 Till now, a whole step foot trajectory has been generated. The generation process can be implement in all six legs.
 
